@@ -14,7 +14,8 @@ public class Principal {
 		Scanner sc = new Scanner(System.in);
 
 		String nome, cpf, email, telefone, tipo_sanguineo, endereco, responsavel, funcionario, data, tipo, hospital, fator;
-		double peso, id, quantidade;
+		double peso, quantidade;
+		int id;
 		
 		Doador doador = new Doador();
 		/*Funcionario funcionario = new Funcionario();
@@ -55,7 +56,7 @@ public class Principal {
 				System.out.println("Digite o tipo sanguineo do doador");
 				tipo_sanguineo = sc.nextLine();
 				System.out.println("Digite o peso do doador");
-				//peso = sc.next();
+				peso = sc.nextDouble();
 				break;
 			case 2:
 				System.out.println("\n-- LISTAR DOADOR --\n");
@@ -69,7 +70,7 @@ public class Principal {
 			case 5:
 				System.out.println("\n-- CADASTRAR FUNCIONARIO --\n");
 				System.out.println("Digite o id do funcionario");
-				//id = sc.nextLine();
+				id = sc.nextInt();
 				System.out.println("Digite o nome do funcionario");
 				nome = sc.nextLine();
 				System.out.println("Digite o cpf do funcionario");
@@ -91,7 +92,7 @@ public class Principal {
 			case 9:
 				System.out.println("\n-- CADASTRAR HOSPITAL --\n");
 				System.out.println("Digite o id do hospital");
-				//id = sc.nextLine();
+				id = sc.nextInt();
 				System.out.println("Digite o nome do hospital");
 				nome = sc.nextLine();
 				System.out.println("Digite o endereço do hospital");
@@ -113,7 +114,7 @@ public class Principal {
 			case 13:
 				System.out.println("\n-- CADASTRAR COLETA DE SANGUE --\n");
 				System.out.println("Digite o id da coleta");
-				//id = sc.nextLine();
+				id = sc.nextInt();
 				System.out.println("Digite o nome do doador");
 				nome = sc.nextLine();
 				System.out.println("Digite o funcionario");
@@ -123,12 +124,12 @@ public class Principal {
 				System.out.println("Digite o tipo sanguíneo");
 				tipo = sc.next();
 				System.out.println("Digite a quantidade doada");
-				//quantidade = sc.next();
+				quantidade = sc.nextDouble();
 				break;
 			case 14:
 				System.out.println("\n-- CADASTRAR PEDIDO DE SANGUE --\n");
 				System.out.println("Digite o id do pedido de sangue");
-				//id = sc.nextLine();
+				id = sc.nextInt();
 				System.out.println("Digite o nome do hospital");
 				hospital = sc.nextLine();
 				System.out.println("Digite a data");
@@ -136,12 +137,12 @@ public class Principal {
 				System.out.println("Digite o tipo sanguíneo");
 				tipo = sc.next();
 				System.out.println("Digite a quantidade doada");
-				//quantidade = sc.next();
+				quantidade = sc.nextDouble();
 				break;
 			case 16:
 				System.out.println("\n-- CADASTRAR TIPO DE SANGUE --\n");
 				System.out.println("Digite o id do tipo de sangue");
-				//id = sc.nextLine();
+				id = sc.nextInt();
 				System.out.println("Digite o tipo de sangue");
 				tipo = sc.nextLine();
 				System.out.println("Digite o fator RH");

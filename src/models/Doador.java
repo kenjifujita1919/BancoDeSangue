@@ -9,6 +9,17 @@ public class Doador {
 	String telefone;
 	String tipo_sanguineo;
 	double peso;
+	
+	
+
+	public Doador(String nome, String cpf, String email, String telefone, String tipo_sanguineo, double peso) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.telefone = telefone;
+		this.tipo_sanguineo = tipo_sanguineo;
+		this.peso = peso;
+	}
 
 	// Getters and Setters
 	public String getNome() {
@@ -57,6 +68,19 @@ public class Doador {
 
 	public void setPeso(double peso) {
 		this.peso = peso;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Doador outroDoaodr = (Doador) obj;
+		return getCpf().equals(outroDoaodr.getCpf());
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Nome: " + getNome() + " | CPF: " + getCpf() + " | Email: " + getEmail() + " | Telefone: " + getTelefone() + 
+				" | Tipo Sanguineo: " + getTipo_sanguineo() + " | Peso: " + Double.toString(getPeso());
 	}
 
 }

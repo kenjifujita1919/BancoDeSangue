@@ -3,18 +3,26 @@ package models;
 public class Funcionario {
 
 	// Características, atributos ou propriedades
-	double id;
+	int id;
 	String nome;
 	String cpf;
 	String email;
 	String telefone;
+
+	public Funcionario(int id, String nome, String cpf, String email, String telefone) {
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.telefone = telefone;
+	}
 
 	// Getters and Setters
 	public double getId() {
 		return id;
 	}
 
-	public void setId(double id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -48,6 +56,18 @@ public class Funcionario {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Funcionario outroFuncionario = (Funcionario) obj;
+		return getCpf().equals(outroFuncionario.getCpf());
+	}
+
+	@Override
+	public String toString() {
+		return " | Id: " + getId() + " |Nome: " + getNome() + " | CPF: " + getCpf() + " | Email: " + getEmail()
+				+ " | Telefone: " + getTelefone();
 	}
 
 }

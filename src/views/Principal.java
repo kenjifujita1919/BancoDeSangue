@@ -13,11 +13,12 @@ public class Principal {
 		int opcao;
 		Scanner sc = new Scanner(System.in);
 
-		String nome, cpf, email, telefone, tipo_sanguineo, endereco, responsavel, funcionario, data, tipo, hospital, fator;
+		String nome, cpf, email, telefone, tipo_sanguineo, endereco, responsavel, funcionario, data, tipo, hospital,
+				fator;
 		double peso, quantidade;
 		int id;
-		
-		Doador doador = new Doador();
+
+		/*Doador doador = new Doador();
 		/*Funcionario funcionario = new Funcionario();
 		Hospital hospital = new Hospital();*/
 

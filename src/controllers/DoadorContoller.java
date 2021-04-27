@@ -20,6 +20,7 @@ public class DoadorContoller {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
 			System.out.println("1 - Cadastrar doador");
 			System.out.println("2 - Listar doadores");
+			System.out.println("3 - Remover doador");
 			System.out.println("0 - Sair\n");
 			System.out.println("Digite a opção desejada: ");
 			opcao = sc.nextInt();
@@ -47,6 +48,12 @@ public class DoadorContoller {
 			case 2:
 				System.out.println("\n-- LISTA DE DOADORES --\n");
 				System.out.println(DoadorView.Listar());
+				break;
+			case 3:
+				System.out.println("\n-- REMOVER DOADOR --\n");
+				System.out.println("Digite o nome do doador que deseja remover:");
+				nome = sc.nextLine();
+				DoadorView.Remover(nome);
 				break;
 			case 0:
 				System.out.println("\nSaindo...");

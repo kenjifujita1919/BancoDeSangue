@@ -14,8 +14,7 @@ public class FuncionarioController {
 		
 		Funcionario Funcionario;
 		
-		String nome, email, cpf, telefone; 
-		int id;
+		String nome, email, cpf, telefone;
 		
 		do {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
@@ -27,9 +26,7 @@ public class FuncionarioController {
 			sc.nextLine();
 			switch (opcao) {
 			case 1:
-				System.out.println("\n-- CADASTRAR FUNCIONÁRIO --\n");
-				System.out.println("Digite o Id do funcionário:");
-				id = sc.nextInt();				
+				System.out.println("\n-- CADASTRAR FUNCIONÁRIO --\n");			
 				System.out.println("Digite o nome do funcionário:");
 				nome = sc.nextLine();
 				System.out.println("Digite o CPF do funcionário:");
@@ -40,7 +37,7 @@ public class FuncionarioController {
 				email = sc.nextLine();
 				
 				
-				Funcionario = new Funcionario(id, nome, cpf, telefone, email);
+				Funcionario = new Funcionario(nome, cpf, telefone, email);
 				FuncionarioView.Cadastro(Funcionario);
 				
 				break;

@@ -1,6 +1,7 @@
 package views;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import models.Doador;
 
@@ -30,5 +31,24 @@ public class DoadorView {
 				lista += d.toString() + "\n";
 			}
 			return lista;
+		}
+		
+		public static void Remover(String Doador) {
+			
+			for(int i=0; i < doadores.size(); i++) {
+			    Doador d = doadores.get(i);
+			    
+			    if(d.getNome().equals(Doador)) {
+			    	doadores.remove(d);
+			    	if(doadores.size() > 0) {
+			    		Listar();
+			    	}else {
+			    		System.out.println("Lista de doadores vazia!");
+			    	}
+			    }else {
+			    	System.out.println("Doador não encontrado!");
+			    }
+			}
+			
 		}
 }

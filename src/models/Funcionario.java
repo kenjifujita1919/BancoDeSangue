@@ -9,8 +9,8 @@ public class Funcionario {
 	String email;
 	String telefone;
 
-	public Funcionario(int id, String nome, String cpf, String email, String telefone) {
-		this.id = id;
+	public Funcionario(String nome, String cpf, String email, String telefone) {
+		this.id = GerarID.GerarFuncionario();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;

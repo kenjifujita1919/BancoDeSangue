@@ -3,12 +3,14 @@ package models;
 public class Doador {
 
 	// Características, atributos ou propriedades
+	int ID;
 	String nome;
 	String cpf;
 	String email;
 	String telefone;
 	String tipo_sanguineo;
 	double peso;
+	
 	
 	
 
@@ -19,9 +21,16 @@ public class Doador {
 		this.telefone = telefone;
 		this.tipo_sanguineo = tipo_sanguineo;
 		this.peso = peso;
+		this.ID = GerarID.GerarDoador();
 	}
 
-	// Getters and Setters
+	public double getId() {
+		return ID;
+	}
+
+	public void setId(int id) {
+		this.ID = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -77,9 +86,11 @@ public class Doador {
 	}
 	
 	
+	
+	
 	@Override
 	public String toString() {
-		return "Nome: " + getNome() + " | CPF: " + getCpf() + " | Email: " + getEmail() + " | Telefone: " + getTelefone() + 
+		return "ID: " + getId() + "| Nome: " + getNome() + " | CPF: " + getCpf() + " | Email: " + getEmail() + " | Telefone: " + getTelefone() + 
 				" | Tipo Sanguineo: " + getTipo_sanguineo() + " | Peso: " + Double.toString(getPeso());
 	}
 

@@ -18,10 +18,6 @@ public class Principal {
 		double peso, quantidade;
 		int id;
 
-		/*Doador doador = new Doador();
-		/*Funcionario funcionario = new Funcionario();
-		Hospital hospital = new Hospital();*/
-
 		do {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
 			System.out.println("1 - Cadastrar doador");

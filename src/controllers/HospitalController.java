@@ -3,7 +3,9 @@ package controllers;
 import java.util.Scanner;
 
 import models.Funcionario;
+import models.Hospital;
 import views.FuncionarioView;
+import views.HospitalView;
 
 public class HospitalController {
 	
@@ -13,8 +15,7 @@ public class HospitalController {
 
 		Hospital Hospital;
 
-		String nome, endereco, responsavel;
-		int telefone;
+		String nome, endereco, responsavel, telefone;
 
 		do {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
@@ -35,7 +36,7 @@ public class HospitalController {
 				System.out.println("Digite o responsavel do hospital:");
 				responsavel = sc.nextLine();
 				System.out.println("Digite o telefone do hospital:");
-				telefone = sc.nextInt();
+				telefone = sc.nextLine();
 
 				Hospital = new Hospital(nome, endereco, responsavel, telefone);
 				HospitalView.Cadastro(Hospital);

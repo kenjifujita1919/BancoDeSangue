@@ -3,18 +3,26 @@ package models;
 public class Hospital {
 
 	// Características, atributos ou propriedades
-	double id;
+	int id;
 	String nome;
 	String endereco;
 	String responsavel;
 	String telefone;
+
+	public Hospital(String nome, String endereco, String responsavel, String telefone) {
+		this.id = GerarID.GerarHospital();
+		this.nome = nome;
+		this.endereco = endereco;
+		this.responsavel = responsavel;
+		this.telefone = telefone;
+	}
 
 	// Getters and Setters
 	public double getId() {
 		return id;
 	}
 
-	public void setId(double id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -49,7 +57,17 @@ public class Hospital {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Hospital outroHospital = (Hospital) obj;
+		return getNome().equals(outroHospital.getNome());
+	}
 
-
+	@Override
+	public String toString() {
+		return " | Id: " + getId() + " |Nome: " + getNome() + " | Endereco: " + getEndereco() + " | Responsavel: " + getResponsavel()
+				+ " | Telefone: " + getTelefone();
+	}
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import models.Doador;
+import models.GerarID;
 
 public class DoadorController {
 
@@ -18,6 +19,7 @@ public class DoadorController {
 			}
 		}
 		if (!clienteEncontrado) {
+			doador.setId(GerarID.GerarDoador());
 			doadores.add(doador);
 		} else {
 			System.out.println("Esse cliente já existe!");
@@ -55,17 +57,10 @@ public class DoadorController {
 	public static void Alterar(String nome) {
 
 		for (int i = 0; i < doadores.size(); i++) {
-			Doador d = doadores.get(i);
-
-			if (d.getNome().equals(nome)) {
-				doadores.set(nome, new d);
-				if (doadores.size() > 0) {
-					Listar();
-				} else {
-					System.out.println("Lista de doadores vazia!");
-				}
-			} else {
-				System.out.println("Doador não encontrado!");
+			if (doadores.get(i).getNome().equals(nome)) {
+				System.out.println(doadores.get(i));
+				
+				//doadores.get(i).setNome(nome);
 			}
 		}
 

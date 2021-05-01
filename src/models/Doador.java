@@ -21,7 +21,6 @@ public class Doador {
 		this.telefone = telefone;
 		this.tipo_sanguineo = tipo_sanguineo;
 		this.peso = peso;
-		this.ID = GerarID.GerarDoador();
 	}
 
 	public double getId() {

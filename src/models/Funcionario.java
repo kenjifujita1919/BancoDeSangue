@@ -10,7 +10,6 @@ public class Funcionario {
 	String telefone;
 
 	public Funcionario(String nome, String cpf, String email, String telefone) {
-		this.id = GerarID.GerarFuncionario();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;

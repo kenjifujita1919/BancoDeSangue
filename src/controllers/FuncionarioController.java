@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import models.Doador;
 import models.Funcionario;
+import models.GerarID;
 
 public class FuncionarioController {
 	
@@ -17,6 +18,7 @@ public class FuncionarioController {
 			}
 		}
 			if(!funcionarioEncontrado) {
+				funcionario.setId(GerarID.GerarDoador());
 				funcionarios.add(funcionario);
 			}else {
 				System.out.println("Esse funcionario já existe!");

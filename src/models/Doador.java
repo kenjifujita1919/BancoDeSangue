@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Doador {
 
 	// Características, atributos ou propriedades
@@ -11,8 +14,11 @@ public class Doador {
 	String tipo_sanguineo;
 	double peso;
 	
+	public List<Doador> doadores = new ArrayList<Doador>();
 	
-	
+	public List getDoadores() {
+		return doadores;
+	}
 
 	public Doador(String nome, String cpf, String email, String telefone, String tipo_sanguineo, double peso) {
 		this.nome = nome;

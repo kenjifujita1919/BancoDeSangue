@@ -8,7 +8,7 @@ import models.GerarID;
 
 public class DoadorController {
 
-	private static ArrayList<Doador> doadores = new ArrayList<Doador>();
+	public static ArrayList<Doador> doadores = new ArrayList<Doador>();
 
 	public static void Cadastro(Doador doador) {
 

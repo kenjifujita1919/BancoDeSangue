@@ -63,7 +63,8 @@ public class DoadorView {
 				DoadorController.Alterar(nome);
 				break;
 			case 0:
-				System.out.println("\nSaindo...");
+				System.out.println("\nVoltando ao menu principal");
+				Principal.main(null);
 				break;
 			default:
 				System.out.println("\nOpção inválida!");

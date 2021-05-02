@@ -13,12 +13,13 @@ public class ColetaView {
 	Scanner sc = new Scanner(System.in);
 	
 	String nome;
+	String funcionario;
 	
 	do {
 		System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
-		System.out.println("1 - Cadastrar doador");
-		System.out.println("2 - Listar doadores");
-		System.out.println("3 - Remover doador");
+		System.out.println("1 - Cadastrar coleta");
+		System.out.println("2 - Listar coleta");
+		System.out.println("3 - Remover coleta");
 		System.out.println("0 - Sair\n");
 		System.out.println("Digite a opção desejada: ");
 		opcao = sc.nextInt();
@@ -28,14 +29,18 @@ public class ColetaView {
 			System.out.println("\n-- CADASTRAR DOADOR --\n");
 			System.out.println("Digite o nome do Doador:");
 			nome = sc.nextLine();
-			ColetaController.Cadastro(nome);
+			System.out.println("Digite o nome do funcionario:");
+			funcionario = sc.nextLine();
+			ColetaController.Cadastro(nome, funcionario);
 			break;
 		case 2:
+			ColetaController.Listar();
 			break;
 		case 3:
 			break;
 		case 0:
-			System.out.println("\nSaindo...");
+			System.out.println("\nVoltando ao menu principal");
+			Principal.main(null);
 			break;
 		default:
 			System.out.println("\nOpção inválida!");

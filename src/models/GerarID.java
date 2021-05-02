@@ -4,6 +4,7 @@ public class GerarID {
 	private static int DoadorID = 1;
 	private static int FuncionarioID = 1;
 	private static int HospitalID = 1;
+	private static int ColetaID = 1;
 
     public static int GerarDoador() {
         return DoadorID++;
@@ -13,6 +14,9 @@ public class GerarID {
     }
     public static int GerarHospital() {
         return HospitalID++;
+    }
+    public static int GerarColeta() {
+        return ColetaID++;
     }
     
 }

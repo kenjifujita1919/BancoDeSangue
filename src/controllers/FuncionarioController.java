@@ -8,7 +8,7 @@ import models.GerarID;
 
 public class FuncionarioController {
 	
-	private static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
+	public static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	public static void Cadastro(Funcionario funcionario) {
 		
 		boolean funcionarioEncontrado = false;

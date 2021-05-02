@@ -30,9 +30,10 @@ public class Principal {
 				FuncionarioView.Menu();
 				break;
 			case 3:
+				break;
+			case 4:
 				ColetaView.Menu();
 				break;
-			
 			case 0:
 				System.out.println("\nSaindo...\n");
 				break;

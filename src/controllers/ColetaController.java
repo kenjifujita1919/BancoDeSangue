@@ -12,8 +12,6 @@ import views.DoadorView;
 
 public class ColetaController {
 
-	private static	ArrayList<Doador> doadores = new ArrayList<Doador>();
-	private static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	private static	ArrayList<ColetaDeSangue> coletas = new ArrayList<ColetaDeSangue>();
 		
 	
@@ -22,6 +20,7 @@ public static void Cadastro(String doador, String funcionario) {
 	ColetaDeSangue coleta = new ColetaDeSangue();
 	doadores = DoadorController.doadores;
 	funcionarios = FuncionarioController.funcionarios;
+		
 		for(int i = 0; i < doadores.size(); i++) {
 			Doador d = doadores.get(i);
 			if(d.getNome().equals(doador)) {

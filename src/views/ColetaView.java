@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import controllers.ColetaController;
 import controllers.DoadorController;
+import models.ColetaDeSangue;
 import models.Doador;
 
 public class ColetaView {
@@ -12,8 +13,10 @@ public class ColetaView {
 	int opcao;
 	Scanner sc = new Scanner(System.in);
 	
-	String nome;
-	String funcionario;
+	String nome, funcionario;
+	int quantidadeSangue;
+	
+	
 	
 	do {
 		System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
@@ -26,17 +29,26 @@ public class ColetaView {
 		sc.nextLine();
 		switch (opcao) {
 		case 1:
-			System.out.println("\n-- CADASTRAR DOADOR --\n");
+			System.out.println("\n-- CADASTRAR COLETA --\n");
 			System.out.println("Digite o nome do Doador:");
 			nome = sc.nextLine();
 			System.out.println("Digite o nome do funcionario:");
 			funcionario = sc.nextLine();
+			System.out.println("Digite a quantidade de sangue doada:");
+			quantidadeSangue = sc.nextInt();
 			ColetaController.Cadastro(nome, funcionario);
 			break;
 		case 2:
-			ColetaController.Listar();
+			System.out.println("\n-- LISTAR COLETAS --\n");
+			for (ColetaDeSangue coleta : ColetaController.Listar()) {
+				System.out.println(coleta);
+			}
 			break;
 		case 3:
+			System.out.println("\n-- REMOVER COLETA --\n");
+			System.out.println("Digite o nome do Doador:");
+			nome = sc.nextLine();
+			ColetaController.Remover(nome);
 			break;
 		case 0:
 			System.out.println("\nVoltando ao menu principal");

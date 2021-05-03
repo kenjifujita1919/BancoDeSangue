@@ -1,11 +1,13 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import models.ColetaDeSangue;
 import models.Doador;
 import models.Funcionario;
 import models.GerarID;
+import views.ColetaView;
 import views.DoadorView;
 
 public class ColetaController {
@@ -47,13 +49,25 @@ public static void Cadastro(String doador, String funcionario) {
 		}
 	}
 
-public static String Listar() {
-	String lista = "";
-
-	for (ColetaDeSangue c : coletas) {
-		lista += c.toString() + "\n";
-	}
-	return lista;
+public static List<ColetaDeSangue> Listar() {
+	return coletas;
 }
 
+public static void Remover(String doador) {
+	
+	for (int i = 0; i < coletas.size(); i++) {
+		ColetaDeSangue c = coletas.get(i);
+
+		if (c.getDoador().getNome().equals(doador)) {
+			coletas.remove(c);
+			if (coletas.size() > 0) {
+				Listar();
+			} else {
+				System.out.println("Lista de doadores vazia!");
+			}
+		} else {
+			System.out.println("Doador não encontrado!");
+		}
+	}
+}
 }

@@ -19,7 +19,8 @@ public class Principal {
 			System.out.println("2 - Funcionario");
 			System.out.println("3 - Hospital");
 			System.out.println("4 - Coleta");
-			System.out.println("5 - Sair\n");
+			System.out.println("5 - Pedido de Sangue");
+			System.out.println("6 - Sair\n");
 			System.out.println("Digite a opção desejada: ");
 			opcao = sc.nextInt();
 			switch (opcao) {
@@ -33,6 +34,9 @@ public class Principal {
 				break;
 			case 4:
 				ColetaView.Menu();
+				break;
+			case 5:
+				PedidoDeSangueView.Menu();
 				break;
 			case 0:
 				System.out.println("\nSaindo...\n");

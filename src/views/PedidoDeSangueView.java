@@ -18,7 +18,7 @@ public class PedidoDeSangueView {
 
 		PedidoDeSangue PedidoDeSangue;
 
-		String nome_do_hospital, tipo_sanguineo;
+		String nome_do_hospital, tipo_sanguineo, fator_rh;
 		int quantidade_doada;
 		Date criadoEm;
 
@@ -40,8 +40,10 @@ public class PedidoDeSangueView {
 				tipo_sanguineo = sc.nextLine();
 				System.out.println("Digite a quantidade de sangue doada:");
 				quantidade_doada = sc.nextInt();
+				System.out.println("Digite o fator_rh:");
+				fator_rh = sc.nextLine();
 				
-				PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada, tipo_sanguineo);
+				PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada, tipo_sanguineo, fator_rh);
 				PedidoDeSangueController.Cadastro(PedidoDeSangue);
 				break;
 			case 2:

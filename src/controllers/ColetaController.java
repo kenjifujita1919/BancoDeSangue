@@ -13,6 +13,8 @@ import views.DoadorView;
 public class ColetaController {
 
 	private static	ArrayList<ColetaDeSangue> coletas = new ArrayList<ColetaDeSangue>();
+	private static	ArrayList<Doador> doadores = new ArrayList<Doador>();
+	private static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		
 	
 public static void Cadastro(String doador, String funcionario) {

@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import models.Funcionario;
 import models.GerarID;
@@ -26,13 +27,8 @@ public class PedidoDeSangueController {
 			
 		}
 		
-		public static String Listar(){
-			String lista = "";
-			
-			for(PedidoDeSangue p : pedidos) {
-				lista += p.toString() + "\n";
-			}
-			return lista;
+		public static List<PedidoDeSangue> Listar(){
+			return pedidos;
 		}
 		
 public static void Remover(String PedidoDeSangue) {

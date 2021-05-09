@@ -64,5 +64,10 @@ public class HospitalView {
 
 		sc.close();
 	}
+
+	public static void Menu() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

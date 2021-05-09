@@ -6,16 +6,16 @@ import controllers.DoadorController;
 import models.Doador;
 
 public class DoadorView {
-	
+
 	public static void Menu() {
 		int opcao;
 		Scanner sc = new Scanner(System.in);
-		
+
 		Doador Doador;
-		
-		String nome, email, cpf, telefone, tipo_sanguineo; 
+
+		String nome, email, cpf, telefone;
 		double peso;
-		
+
 		do {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
 			System.out.println("1 - Cadastrar doador");
@@ -37,14 +37,12 @@ public class DoadorView {
 				telefone = sc.nextLine();
 				System.out.println("Digite o Email do Doador:");
 				email = sc.nextLine();
-				System.out.println("Digite o Tipo Sanguineo do Doador:");
-				tipo_sanguineo = sc.nextLine();
 				System.out.println("Digite o Peso do Doador:");
 				peso = sc.nextDouble();
-				
-				Doador = new Doador(nome, cpf, telefone, email, tipo_sanguineo, peso);
+
+				Doador = new Doador(nome, cpf, telefone, email, peso);
 				DoadorController.Cadastro(Doador);
-				
+
 				break;
 			case 2:
 				System.out.println("\n-- LISTA DE DOADORES --\n");
@@ -69,9 +67,9 @@ public class DoadorView {
 			default:
 				System.out.println("\nOpção inválida!");
 				break;
-			}			
+			}
 		} while (opcao != 0);
 
 		sc.close();
-	}	
+	}
 }

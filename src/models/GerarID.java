@@ -6,6 +6,7 @@ public class GerarID {
 	private static int HospitalID = 1;
 	private static int ColetaID = 1;
 	private static int PedidoDeSangueID = 1;
+	private static int TipoSanguineoID = 1;
 
     public static int GerarDoador() {
         return DoadorID++;
@@ -21,6 +22,9 @@ public class GerarID {
     }
     public static int GerarPedidoDeSangue() {
         return PedidoDeSangueID++;
+    }
+    public static int GerarTipoSanguineo() {
+        return TipoSanguineoID++;
     }
     
 }

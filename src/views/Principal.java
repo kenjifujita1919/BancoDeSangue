@@ -31,6 +31,7 @@ public class Principal {
 				FuncionarioView.Menu();
 				break;
 			case 3:
+				HospitalView.Menu();
 				break;
 			case 4:
 				ColetaView.Menu();

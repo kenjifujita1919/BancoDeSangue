@@ -11,21 +11,19 @@ public class Doador {
 	String cpf;
 	String email;
 	String telefone;
-	String tipo_sanguineo;
 	double peso;
-	
+
 	public List<Doador> doadores = new ArrayList<Doador>();
-	
+
 	public List getDoadores() {
 		return doadores;
 	}
 
-	public Doador(String nome, String cpf, String email, String telefone, String tipo_sanguineo, double peso) {
+	public Doador(String nome, String cpf, String email, String telefone, double peso) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 		this.telefone = telefone;
-		this.tipo_sanguineo = tipo_sanguineo;
 		this.peso = peso;
 	}
 
@@ -36,6 +34,7 @@ public class Doador {
 	public void setId(int id) {
 		this.ID = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -67,15 +66,6 @@ public class Doador {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-
-	public String getTipo_sanguineo() {
-		return tipo_sanguineo;
-	}
-
-	public void setTipo_sanguineo(String tipo_sanguineo) {
-		this.tipo_sanguineo = tipo_sanguineo;
-	}
-
 	public double getPeso() {
 		return peso;
 	}
@@ -83,20 +73,18 @@ public class Doador {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		Doador outroDoaodr = (Doador) obj;
 		return getCpf().equals(outroDoaodr.getCpf());
 	}
-	
-	
-	
-	
+
 	@Override
 	public String toString() {
-		return "ID: " + getId() + "| Nome: " + getNome() + " | CPF: " + getCpf() + " | Email: " + getEmail() + " | Telefone: " + getTelefone() + 
-				" | Tipo Sanguineo: " + getTipo_sanguineo() + " | Peso: " + Double.toString(getPeso());
+		return "ID: " + getId() + "| Nome: " + getNome() + " | CPF: " + getCpf() + " | Email: " + getEmail()
+				+ " | Telefone: " + getTelefone() +  " | Peso: "
+				+ Double.toString(getPeso());
 	}
 
 }

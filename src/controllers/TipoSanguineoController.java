@@ -10,74 +10,51 @@ import models.TipoSanguineo;
 
 public class TipoSanguineoController {
 
-	public static ArrayList<TipoSanguineo> tipos = new ArrayList<TipoSanguineo>();
-
-	public static void Cadastro(TipoSanguineo tipoSanguineo) {
-
-		boolean tipoSanguineoEncontrado = false;
-
+	public static String Cadastro() {
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Selecione de 1 e 8:");
-		System.out.println(" 1 = A+ ");
-		System.out.println(" 2 = A- ");
-		System.out.println(" 3 = B+ ");
-		System.out.println(" 4 = B- ");
-		System.out.println(" 5 = AB+ ");
-		System.out.println(" 6 = AB- ");
-		System.out.println(" 7 = O+ ");
-		System.out.println(" 8 = O- ");
+		System.out.println(" 1 = Tipo Sanguineo A+ ");
+		System.out.println(" 2 = Tipo Sanguineo A- ");
+		System.out.println(" 3 = Tipo Sanguineo B+ ");
+		System.out.println(" 4 = Tipo Sanguineo B- ");
+		System.out.println(" 5 = Tipo Sanguineo AB+ ");
+		System.out.println(" 6 = Tipo Sanguineo AB- ");
+		System.out.println(" 7 = Tipo Sanguineo O+ ");
+		System.out.println(" 8 = Tipo Sanguineo O- ");
 
 		int tipos = entrada.nextInt();
+		String Sangue = "";
 
 		switch (tipos) {
 		case 1:
-			System.out.println("Tipo Sanguineo = A+");
+			Sangue = "A+";
 			break;
 		case 2:
-			System.out.println("Tipo Sanguineo = A-");
+			Sangue = "A-";
 			break;
 		case 3:
-			System.out.println("Tipo Sanguineo = B+");
+			Sangue = "B+";
 			break;
 		case 4:
-			System.out.println("Tipo Sanguineo = B-");
+			Sangue = "B-";
 			break;
 		case 5:
-			System.out.println("Tipo Sanguineo = AB+");
+			Sangue = "AB+";
 			break;
 		case 6:
-			System.out.println("Tipo Sanguineo = AB-");
+			Sangue = "AB-";
 			break;
 		case 7:
-			System.out.println("Tipo Sanguineo = O+");
+			Sangue = "O+";
 			break;
 		case 8:
-			System.out.println("Tipo Sanguineo = O-");
+			Sangue = "O-";
 			break;
 		default:
 			System.out.println("Tipo Sanguineo Inválido!");
 		}
+		return Sangue;
 
 	}
-
-	boolean tipoSanguineoEncontrado = false;
-	for(TipoSanguineo t : tipos) {
-		if(t.getTipo_sanguineo().equals(tipoSanguineo.getID())) {
-			tipoSanguineoEncontrado = true;
-		}
-	}
-		if(!pedidoDeSangueEncontrado) {
-			tipoSanguineo.setID(GerarID.GerarPedidoDeSangue());
-			tipos.add(tipoSanguineo);
-		}else {
-			System.out.println("Esse Tipo Sanguineo já existe!");
-		}
-		
-	}
-	
-	public static List<TipoSanguineo> Listar() {
-		return tipos;
-	}
-
 	
 }

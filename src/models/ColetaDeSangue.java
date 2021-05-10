@@ -8,6 +8,7 @@ public class ColetaDeSangue {
 	private Doador doador;
 	private Funcionario funcionario;
 	private int Quantidade;
+	private String tipoSanguineo;
 	private Date criadoEm;
 
 	public ColetaDeSangue() {
@@ -54,10 +55,20 @@ public class ColetaDeSangue {
 		this.criadoEm = criadoEm;
 	}
 
+	public String getTipoSanguineo() {
+		return tipoSanguineo;
+	}
+
+	public void setTipoSanguineo(String tipoSanguineo) {
+		this.tipoSanguineo = tipoSanguineo;
+	}
+
 	@Override
 	public String toString() {
-		return "ColetaDeSangue [ID=" + ID + ", doador=" + doador + ", \n funcionario=" + funcionario
-				+ " \n, Quantidade=" + Quantidade + ", Data=" + criadoEm + "]";
+		return "ColetaDeSangue [ID=" + ID + ", doador=" + doador + ", funcionario=" + funcionario + ", Quantidade="
+				+ Quantidade + ", tipoSanguineo=" + tipoSanguineo + ", criadoEm=" + criadoEm + "]";
 	}
+	
+	
 
 }

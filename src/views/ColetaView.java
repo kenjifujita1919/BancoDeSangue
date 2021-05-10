@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import controllers.ColetaController;
 import controllers.DoadorController;
+import controllers.TipoSanguineoController;
 import models.ColetaDeSangue;
 import models.Doador;
 
@@ -13,7 +14,7 @@ public class ColetaView {
 	int opcao;
 	Scanner sc = new Scanner(System.in);
 	
-	String nome, funcionario;
+	String nome, funcionario, tipo;
 	int quantidadeSangue;
 	
 	
@@ -36,7 +37,7 @@ public class ColetaView {
 			funcionario = sc.nextLine();
 			System.out.println("Digite a quantidade de sangue doada:");
 			quantidadeSangue = sc.nextInt();
-			ColetaController.Cadastro(nome, funcionario);
+			ColetaController.Cadastro(nome, funcionario, TipoSanguineoController.Cadastro(), quantidadeSangue);
 			break;
 		case 2:
 			System.out.println("\n-- LISTAR COLETAS --\n");

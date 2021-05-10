@@ -17,7 +17,7 @@ public class ColetaController {
 	private static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		
 	
-public static void Cadastro(String doador, String funcionario) {
+public static void Cadastro(String doador, String funcionario, String Tipo, int Quantidade) {
 		
 	ColetaDeSangue coleta = new ColetaDeSangue();
 	doadores = DoadorController.doadores;
@@ -45,6 +45,8 @@ public static void Cadastro(String doador, String funcionario) {
 				System.out.println("Não e possivel fazer a coleta sem um Funcionario!");
 			}else {
 				coleta.setID(GerarID.GerarColeta());
+				coleta.setQuantidade(Quantidade);
+				coleta.setTipoSanguineo(Tipo);
 				coletas.add(coleta);
 			}
 		}

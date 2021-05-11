@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import models.ColetaDeSangue;
@@ -53,6 +54,7 @@ public static void Cadastro(String doador, String funcionario, String Tipo, int 
 	}
 
 public static List<ColetaDeSangue> Listar() {
+
 	return coletas;
 }
 
@@ -73,4 +75,119 @@ public static void Remover(String doador) {
 		}
 	}
 }
+public static void EstoqueTotal() {
+	int Amais = 0;
+	int Amenos = 0;
+	int Bmais = 0;
+	int Bmenos = 0;
+	int ABmais  = 0;
+	int ABmenos  = 0;
+	int Omais = 0;
+	int Omenos = 0;
+	
+	
+	for (int i = 0 ; i <coletas.size(); i++)
+	{
+		ColetaDeSangue y = coletas.get(i);
+		if(y.getTipoSanguineo() == "A+")
+		{
+			Amais = 1 + Amais;
+			
+		}
+		if(y.getTipoSanguineo() == "A-")
+		{
+			Amenos = 1 + Amenos;
+			
+		}
+		if(y.getTipoSanguineo() == "B+")
+		{
+			Bmais = 1 + Bmais;
+			
+		}
+		if(y.getTipoSanguineo() == "B-")
+		{
+			Bmenos = 1 + Bmenos;
+			
+		}	
+		if(y.getTipoSanguineo() == "AB+")
+		{
+			ABmais = 1 + ABmais;
+			
+		}	
+		if(y.getTipoSanguineo() == "AB-")
+		{
+			ABmenos = 1 + ABmenos;
+			
+		}	
+		if(y.getTipoSanguineo() == "O+")
+		{
+			Omais = 1 + Omais;
+			
+		}
+		if(y.getTipoSanguineo() == "O-")
+		{
+			Omenos = 1 + Omenos;
+			
+		}	
+		}
+		
+	System.out.println ("Estoque de Sangue");
+	System.out.println ("A+: " +Amais + "| A-: " + Amenos + "| AB+: "+ABmais+"| AB-: "+ABmenos+"| B+: "+Bmais+
+			"| B-: "+ Bmenos+"| O+: "+Omais+"| O-: "+Omenos);
+	}
+public static void Estoque(int optipo) {
+String tiposangue = "";
+	
+	if(optipo == 1)
+	{
+		tiposangue = "A+";
+	}
+	if(optipo == 2)
+	{
+		tiposangue = "A-";
+	}
+	if(optipo == 3)
+	{
+		tiposangue = "B+";
+	}
+	if(optipo == 4)
+	{
+		tiposangue = "B-";
+	}
+	if(optipo == 5)
+	{
+		tiposangue = "AB+";
+	}
+	if(optipo == 6)
+	{
+		tiposangue = "AB-";	
+	}
+	if(optipo == 7)
+	{
+		tiposangue = "O+";
+	}
+	if(optipo == 8)
+	{
+		tiposangue = "O-";
+	}
+	int estoque = 0;
+for (int i = 0 ; i <coletas.size(); i++)
+{
+	
+	ColetaDeSangue y = coletas.get(i);
+	if(y.getTipoSanguineo() == tiposangue)
+	{
+		estoque = 1 + estoque;
+		
+	}
+	
+	
 }
+System.out.println ("Estoque de sangue do tipo " + tiposangue+" : " +estoque);
+}
+}
+
+
+
+
+

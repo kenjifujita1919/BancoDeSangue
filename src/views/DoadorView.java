@@ -8,7 +8,7 @@ import models.Doador;
 public class DoadorView {
 
 	public static void Menu() {
-		int opcao;
+		int opcao,ana;
 		Scanner sc = new Scanner(System.in);
 
 		Doador Doador;
@@ -21,7 +21,6 @@ public class DoadorView {
 			System.out.println("1 - Cadastrar doador");
 			System.out.println("2 - Listar doadores");
 			System.out.println("3 - Remover doador");
-			System.out.println("4 - Alterar doador");
 			System.out.println("0 - Sair\n");
 			System.out.println("Digite a opção desejada: ");
 			opcao = sc.nextInt();
@@ -53,12 +52,6 @@ public class DoadorView {
 				System.out.println("Digite o nome do doador que deseja remover:");
 				nome = sc.nextLine();
 				DoadorController.Remover(nome);
-				break;
-			case 4:
-				System.out.println("\n-- ALTERAR DOADOR --\n");
-				System.out.println("Digite o nome do doador que deseja alterar:");
-				nome = sc.nextLine();
-				DoadorController.Alterar(nome);
 				break;
 			case 0:
 				System.out.println("\nVoltando ao menu principal");

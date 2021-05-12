@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import models.ColetaDeSangue;
 import models.Doador;
 import models.GerarID;
 
@@ -65,4 +66,5 @@ public class DoadorController {
 		}
 
 	}
+		
 }

@@ -185,8 +185,80 @@ for (int i = 0 ; i <coletas.size(); i++)
 }
 System.out.println ("Estoque de sangue do tipo " + tiposangue+" : " +estoque);
 }
+
+public static void BuscarID(int id) {
+	for (int i = 0 ; i <coletas.size(); i++)
+	{
+		ColetaDeSangue y = coletas.get(i);
+		if(y.getID() == id)
+		{
+			System.out.println (coletas.get(i));			
+		}
+		
 }
 
+}
+public static void BuscarData(int id) {
+	for (int i = 0 ; i <coletas.size(); i++)
+	{
+		ColetaDeSangue y = coletas.get(i);
+		if(y.getID() == id)
+		{
+			System.out.println (coletas.get(i));			
+		}
+		
+}
+
+}
+public static void BuscarTipo(int tipo2) {
+String tiposangue2 = "";
+	
+	if(tipo2 == 1)
+	{
+		tiposangue2 = "A+";
+	}
+	if(tipo2 == 2)
+	{
+		tiposangue2 = "A-";
+	}
+	if(tipo2 == 3)
+	{
+		tiposangue2 = "B+";
+	}
+	if(tipo2 == 4)
+	{
+		tiposangue2 = "B-";
+	}
+	if(tipo2 == 5)
+	{
+		tiposangue2 = "AB+";
+	}
+	if(tipo2 == 6)
+	{
+		tiposangue2 = "AB-";	
+	}
+	if(tipo2 == 7)
+	{
+		tiposangue2 = "O+";
+	}
+	if(tipo2 == 8)
+	{
+		tiposangue2 = "O-";
+	}
+	
+for (int i = 0 ; i <coletas.size(); i++)
+{
+	
+	ColetaDeSangue y = coletas.get(i);
+	if(y.getTipoSanguineo() == tiposangue2)
+	{
+		System.out.println (coletas.get(i));
+		
+	}
+
+}
+}
+}
 
 
 

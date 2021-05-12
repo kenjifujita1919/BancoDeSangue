@@ -11,10 +11,9 @@ public class PedidoDeSangue {
 		private String nome_do_hospital;
 		private int quantidade_doada;
 		private String tipo_sanguineo;
-		private String fator_rh;
 		private Date criadoEm;
 		
-		public PedidoDeSangue(String nome_do_hospital, int quantidade_doada, String tipo_sanguineo, String fator_rh ) {
+		public PedidoDeSangue(String nome_do_hospital, int quantidade_doada, String tipo_sanguineo ) {
 			setCriadoEm(new Date());
 		}
 		
@@ -49,13 +48,11 @@ public class PedidoDeSangue {
 			this.criadoEm = criadoEm;
 		}
 
-		public String getFator_rh() {
-			return fator_rh;
-		}
-
-		public void setFator_rh(String fator_rh) {
-			this.fator_rh = fator_rh;
-		}
 				
-		
+		@Override
+		public String toString() {
+			return "PedidoDeSangue | ID =" + ID + "| Nome do Hospital" + nome_do_hospital + "| Quantiidade doada: "
+					+ quantidade_doada + "| tipo_sanguineo=" + tipo_sanguineo +  "| criadoEm="
+					+ criadoEm + "|";
 }
+		}

@@ -23,6 +23,7 @@ public class Principal {
 			System.out.println("4 - Coleta");
 			System.out.println("5 - Pedido de Sangue");
 			System.out.println("6 - Estoque de sangue");
+			System.out.println("7 - Consulta Doador");
 			System.out.println("0 - Sair\n");
 			System.out.println("Digite a opção desejada: ");
 			opcao = sc.nextInt();
@@ -44,6 +45,9 @@ public class Principal {
 				break;
 			case 6:
 				EstoqueView.Menu();
+				break;
+			case 7:
+				ConsultaView.Menu();
 				break;
 			case 0:
 				System.out.println("\nSaindo...\n");

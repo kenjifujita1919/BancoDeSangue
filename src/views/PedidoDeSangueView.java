@@ -17,8 +17,9 @@ public class PedidoDeSangueView {
 		Scanner sc = new Scanner(System.in);
 
 		PedidoDeSangue PedidoDeSangue;
-
-		String nome_do_hospital, tipo_sanguineo, fator_rh;
+		int optipo;
+		String nome_do_hospital;
+		String tipoSanguineo ="";
 		int quantidade_doada;
 		Date criadoEm;
 
@@ -36,14 +37,53 @@ public class PedidoDeSangueView {
 				System.out.println("\n-- CADASTRAR PEDIDO DE SANGUE --\n");
 				System.out.println("Digite o nome de Hospital:");
 				nome_do_hospital = sc.nextLine();
-				System.out.println("Digite o seu Tipo Sanguineo:");
-				tipo_sanguineo = sc.nextLine();
+				System.out.println("Selecione o tipo de Sangue");
+				System.out.println(" 1 = Tipo Sanguineo A+ ");
+				System.out.println(" 2 = Tipo Sanguineo A- ");
+				System.out.println(" 3 = Tipo Sanguineo B+ ");
+				System.out.println(" 4 = Tipo Sanguineo B- ");
+				System.out.println(" 5 = Tipo Sanguineo AB+ ");
+				System.out.println(" 6 = Tipo Sanguineo AB- ");
+				System.out.println(" 7 = Tipo Sanguineo O+ ");
+				System.out.println(" 8 = Tipo Sanguineo O- ");
+				optipo = sc.nextInt();
+				if(optipo == 1)
+				{
+					tipoSanguineo = "A+";
+				}
+				if(optipo == 2)
+				{
+					tipoSanguineo = "A-";
+				}
+				if(optipo == 3)
+				{
+					tipoSanguineo = "B+";
+				}
+				if(optipo == 4)
+				{
+					tipoSanguineo = "B-";
+				}
+				if(optipo == 5)
+				{
+					tipoSanguineo = "AB+";
+				}
+				if(optipo == 6)
+				{
+					tipoSanguineo = "AB-";	
+				}
+				if(optipo == 7)
+				{
+					tipoSanguineo = "O+";
+				}
+				if(optipo == 8)
+				{
+					tipoSanguineo = "O-";
+				}
 				System.out.println("Digite a quantidade de sangue doada:");
 				quantidade_doada = sc.nextInt();
-				System.out.println("Digite o fator_rh:");
-				fator_rh = sc.nextLine();
 				
-				PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada, tipo_sanguineo, fator_rh);
+				
+				PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada,tipoSanguineo);
 				PedidoDeSangueController.Cadastro(PedidoDeSangue);
 				break;
 			case 2:
@@ -55,8 +95,8 @@ public class PedidoDeSangueView {
 			case 3:
 				System.out.println("\n-- REMOVER PEDIDO DE SANGUE --\n");
 				System.out.println("Digite o Tipo Sanguineo:");
-				tipo_sanguineo = sc.nextLine();
-				PedidoDeSangueController.Remover(tipo_sanguineo);
+				tipoSanguineo = sc.nextLine();
+				PedidoDeSangueController.Remover(tipoSanguineo);
 				break;
 			case 0:
 				System.out.println("\nVoltando ao menu principal");

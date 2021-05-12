@@ -9,7 +9,7 @@ import models.Hospital;
 
 public class HospitalView {
 	
-	public static void main(String[] args) {
+	 static void Menu(){
 		int opcao;
 		Scanner sc = new Scanner(System.in);
 
@@ -54,7 +54,7 @@ public class HospitalView {
 				break;
 
 			case 0:
-				System.out.println("\nSaindo...");
+				Principal.main(null);
 				break;
 			default:
 				System.out.println("\nOpção inválida!");
@@ -65,9 +65,6 @@ public class HospitalView {
 		sc.close();
 	}
 
-	public static void Menu() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
 

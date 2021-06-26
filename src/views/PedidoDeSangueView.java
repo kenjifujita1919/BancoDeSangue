@@ -3,10 +3,7 @@ package views;
 import java.util.Date;
 import java.util.Scanner;
 
-import controllers.ColetaController;
 import controllers.PedidoDeSangueController;
-import models.ColetaDeSangue;
-import models.Funcionario;
 import models.PedidoDeSangue;
 
 public class PedidoDeSangueView {

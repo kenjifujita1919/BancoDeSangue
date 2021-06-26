@@ -1,15 +1,12 @@
 package controllers;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import Utils.GerarID;
 import models.ColetaDeSangue;
 import models.Doador;
 import models.Funcionario;
-import models.GerarID;
-import views.ColetaView;
-import views.DoadorView;
 
 public class ColetaController {
 
@@ -21,8 +18,6 @@ public class ColetaController {
 public static void Cadastro(String doador, String funcionario, String Tipo, int Quantidade) {
 		
 	ColetaDeSangue coleta = new ColetaDeSangue();
-	doadores = DoadorController.doadores;
-	funcionarios = FuncionarioController.funcionarios;
 		
 		for(int i = 0; i < doadores.size(); i++) {
 			Doador d = doadores.get(i);

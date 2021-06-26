@@ -2,9 +2,7 @@ package views;
 
 import java.util.Scanner;
 
-import controllers.FuncionarioController;
 import controllers.HospitalController;
-import models.Funcionario;
 import models.Hospital;
 
 public class HospitalView {

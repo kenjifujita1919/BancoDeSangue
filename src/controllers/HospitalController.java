@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.ArrayList;
 
-import models.Funcionario;
 import models.Hospital;
 
 public class HospitalController {

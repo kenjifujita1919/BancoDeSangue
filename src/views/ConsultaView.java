@@ -3,7 +3,6 @@ package views;
 import java.util.Scanner;
 
 import controllers.ColetaController;
-import controllers.DoadorController;
 
 public class ConsultaView {
 	public static void Menu() {

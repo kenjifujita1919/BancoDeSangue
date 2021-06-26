@@ -1,8 +1,7 @@
 package views;
 import java.util.Scanner;
 
-import controllers.DoadorController;
-import controllers.FuncionarioController;
+import controllers.PessoaController;
 import models.Funcionario;
 
 public class FuncionarioView {
@@ -37,18 +36,18 @@ public class FuncionarioView {
 				email = sc.nextLine();
 
 				Funcionario = new Funcionario(nome, cpf, telefone, email);
-				FuncionarioController.Cadastro(Funcionario);
+				PessoaController.cadastrar(Funcionario);
 
 				break;
 			case 2:
 				System.out.println("\n-- LISTA DE FUNCIONÁRIO --\n");
-				System.out.println(FuncionarioController.Listar());
+				System.out.println(PessoaController.listarFuncionario());
 				break;
 			case 3:
 				System.out.println("\n-- REMOVER FUNCIONÁRIO --\n");
 				System.out.println("Digite o nome do funcionário que deseja remover:");
 				nome = sc.nextLine();
-				FuncionarioController.Remover(nome);
+				PessoaController.removerFuncionario(nome);
 				break;
 
 			case 0:

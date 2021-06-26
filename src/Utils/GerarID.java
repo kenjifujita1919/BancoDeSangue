@@ -1,4 +1,4 @@
-package models;
+package Utils;
 
 public class GerarID {
 	private static int DoadorID = 1;

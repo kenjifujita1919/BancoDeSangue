@@ -1,5 +1,7 @@
 package models;
 
+import Utils.GerarID;
+
 public class Hospital {
 
 	// Características, atributos ou propriedades

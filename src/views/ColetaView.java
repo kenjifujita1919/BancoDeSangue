@@ -3,10 +3,8 @@ package views;
 import java.util.Scanner;
 
 import controllers.ColetaController;
-import controllers.DoadorController;
 import controllers.TipoSanguineoController;
 import models.ColetaDeSangue;
-import models.Doador;
 
 public class ColetaView {
 	public static void Menu() {

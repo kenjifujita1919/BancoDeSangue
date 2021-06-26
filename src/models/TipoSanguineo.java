@@ -1,7 +1,5 @@
 package models;
 
-import java.util.Date;
-
 public class TipoSanguineo {
 
 	// Características, atributos ou propriedades

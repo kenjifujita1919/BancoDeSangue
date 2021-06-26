@@ -1,12 +1,6 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
-import models.GerarID;
-import models.PedidoDeSangue;
-import models.TipoSanguineo;
 
 public class TipoSanguineoController {
 

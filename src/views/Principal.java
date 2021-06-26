@@ -2,12 +2,6 @@ package views;
 
 import java.util.Scanner;
 
-import controllers.ColetaController;
-import models.Doador;
-import models.EstoqueDeSangue;
-import models.Funcionario;
-import models.Hospital;
-
 public class Principal {
 
 	public static void main(String[] args) {

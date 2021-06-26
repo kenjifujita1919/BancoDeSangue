@@ -3,8 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Funcionario;
-import models.GerarID;
+import Utils.GerarID;
 import models.PedidoDeSangue;
 
 public class PedidoDeSangueController {

@@ -1,6 +1,7 @@
 package views;
 import java.util.Scanner;
 
+import Utils.GerarID;
 import controllers.PessoaController;
 import models.Funcionario;
 
@@ -34,9 +35,13 @@ public class FuncionarioView {
 				telefone = sc.nextLine();
 				System.out.println("Digite o Telefone do funcionário:");
 				email = sc.nextLine();
-
-				Funcionario = new Funcionario(nome, cpf, telefone, email);
-				PessoaController.cadastrar(Funcionario);
+				try {
+					Funcionario = new Funcionario(GerarID.GerarFuncionario(), nome, cpf, telefone, email);
+					PessoaController.cadastrar(Funcionario);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
 
 				break;
 			case 2:
@@ -47,7 +52,12 @@ public class FuncionarioView {
 				System.out.println("\n-- REMOVER FUNCIONÁRIO --\n");
 				System.out.println("Digite o nome do funcionário que deseja remover:");
 				nome = sc.nextLine();
-				PessoaController.removerFuncionario(nome);
+				try {
+					PessoaController.removerFuncionario(nome);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
 				break;
 
 			case 0:

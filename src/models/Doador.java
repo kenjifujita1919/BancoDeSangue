@@ -7,14 +7,26 @@ public class Doador extends Pessoa {
 
 	double peso;
 
-	public Doador(int _id, String _nome, String _cpf, String _email, String _telefone) {
+//	public Doador(int _id, String _nome, String _cpf, String _email, String _telefone) {
+//		super(_id, _nome, _cpf, _email, _telefone);
+//		
+//	}
+	
+	
+
+	
+
+	
+	public Doador(int _id, String _nome, String _cpf, String _email, String _telefone, double peso) {
 		super(_id, _nome, _cpf, _email, _telefone);
-		
+		this.peso = peso;
 	}
 
-	
 
-	
+
+
+
+
 	public double getPeso() {
 		return peso;
 	}

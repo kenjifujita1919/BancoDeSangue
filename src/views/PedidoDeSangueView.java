@@ -79,9 +79,15 @@ public class PedidoDeSangueView {
 				System.out.println("Digite a quantidade de sangue doada:");
 				quantidade_doada = sc.nextInt();
 				
+				try {
+					PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada,tipoSanguineo);
+					PedidoDeSangueController.Cadastro(PedidoDeSangue);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
 				
-				PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada,tipoSanguineo);
-				PedidoDeSangueController.Cadastro(PedidoDeSangue);
+				
 				break;
 			case 2:
 				System.out.println("\n-- LISTAR PEDIDO DE SANGUE --\n");
@@ -93,7 +99,13 @@ public class PedidoDeSangueView {
 				System.out.println("\n-- REMOVER PEDIDO DE SANGUE --\n");
 				System.out.println("Digite o Tipo Sanguineo:");
 				tipoSanguineo = sc.nextLine();
-				PedidoDeSangueController.Remover(tipoSanguineo);
+				try {
+					PedidoDeSangueController.Remover(tipoSanguineo);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
+				
 				break;
 			case 0:
 				System.out.println("\nVoltando ao menu principal");

@@ -35,9 +35,14 @@ public class HospitalView {
 				responsavel = sc.nextLine();
 				System.out.println("Digite o telefone do hospital:");
 				telefone = sc.nextLine();
-
-				Hospital = new Hospital(nome, endereco, responsavel, telefone);
+				try {
+					Hospital = new Hospital(nome, endereco, responsavel, telefone);
 				HospitalController.Cadastro(Hospital);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
+				
 
 				break;
 			case 2:
@@ -48,7 +53,13 @@ public class HospitalView {
 				System.out.println("\n-- REMOVER HOSPITAL --\n");
 				System.out.println("Digite o nome do hospital que deseja remover:");
 				nome = sc.nextLine();
-				HospitalController.Remover(nome);
+				try {
+					HospitalController.Remover(nome);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
+				
 				break;
 
 			case 0:

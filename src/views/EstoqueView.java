@@ -35,8 +35,14 @@ public class EstoqueView {
 				System.out.println(" 6 = Tipo Sanguineo AB- ");
 				System.out.println(" 7 = Tipo Sanguineo O+ ");
 				System.out.println(" 8 = Tipo Sanguineo O- ");
-			optipo = sc.nextInt();
-				ColetaController.Estoque(optipo);
+				optipo = sc.nextInt();
+				try {
+					ColetaController.Estoque(optipo);
+				}
+				catch (Exception e) {
+					System.out.println("ERRO: " +  e.getMessage());
+				}
+				
 				break;
 			case 2:
 				ColetaController.EstoqueTotal();

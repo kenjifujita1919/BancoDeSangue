@@ -35,7 +35,13 @@ public class ColetaView {
 			funcionario = sc.nextLine();
 			System.out.println("Digite a quantidade de sangue doada:");
 			quantidadeSangue = sc.nextInt();
-			ColetaController.Cadastro(nome, funcionario, TipoSanguineoController.Cadastro(), quantidadeSangue);
+			try {
+				ColetaController.Cadastro(nome, funcionario, TipoSanguineoController.Cadastro(), quantidadeSangue);
+			}
+			catch (Exception e) {
+				System.out.println("ERRO: " +  e.getMessage());
+			}
+			
 			break;
 		case 2:
 			System.out.println("\n-- LISTAR COLETAS --\n");
@@ -47,7 +53,13 @@ public class ColetaView {
 			System.out.println("\n-- REMOVER COLETA --\n");
 			System.out.println("Digite o nome do Doador:");
 			nome = sc.nextLine();
-			ColetaController.Remover(nome);
+			try {
+				ColetaController.Remover(nome);
+			}
+			catch (Exception e) {
+				System.out.println("ERRO: " +  e.getMessage());
+			}
+			
 			break;
 		case 0:
 			System.out.println("\nVoltando ao menu principal");

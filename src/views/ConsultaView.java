@@ -22,7 +22,13 @@ public class ConsultaView {
 		case 1:
 			System.out.println("Digite seu ID: ");			
 			id=sc.nextInt();
-			ColetaController.BuscarID(id);
+			try {
+				ColetaController.BuscarID(id);
+			}
+			catch (Exception e) {
+				System.out.println("ERRO: " +  e.getMessage());
+			}
+			
 			break;
 		case 2:
 			
@@ -38,7 +44,13 @@ public class ConsultaView {
 			System.out.println(" 7 = Tipo Sanguineo O+ ");
 			System.out.println(" 8 = Tipo Sanguineo O- ");
 			tipo=sc.nextInt();
-			ColetaController.BuscarTipo(tipo);
+			try {
+				ColetaController.BuscarTipo(tipo);
+			}
+			catch (Exception e) {
+				System.out.println("ERRO: " +  e.getMessage());
+			}
+			
 			break;		
 		case 0:
 			System.out.println("\nVoltando ao menu principal");

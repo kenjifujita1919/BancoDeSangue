@@ -1,12 +1,14 @@
 package models;
 
 public class Funcionario extends Pessoa {
-
-	public Funcionario(int _id, String _nome, String _cpf, String _email, String _telefone) {
-		super(_id, _nome, _cpf, _email, _telefone);
-		
+	
+	public Funcionario() {
+		super();
 	}
 
+	public Funcionario(int id, String nome, String cpf, String email, String telefone) {
+		super(id, nome, cpf, email, telefone);
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -14,5 +16,14 @@ public class Funcionario extends Pessoa {
 		return getCpf().equals(outroFuncionario.getCpf());
 	}
 
+	@Override
+	public String toString() {
+		return "Funcionario [Id=" + getId() + ", Nome=" + getNome() + ", Cpf=" + getCpf()
+				+ ", Email=" + getEmail() + ", Telefone=" + getTelefone() + "]";
+	}
+	
+	
+	
+	
 
 }

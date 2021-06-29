@@ -15,8 +15,6 @@ public class ColetaView {
 	String nome, funcionario, tipo;
 	int quantidadeSangue;
 	
-	
-	
 	do {
 		System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
 		System.out.println("1 - Cadastrar coleta");
@@ -54,7 +52,7 @@ public class ColetaView {
 			System.out.println("Digite o nome do Doador:");
 			nome = sc.nextLine();
 			try {
-				ColetaController.Remover(nome);
+				//ColetaController.Remover(nome);
 			}
 			catch (Exception e) {
 				System.out.println("ERRO: " +  e.getMessage());

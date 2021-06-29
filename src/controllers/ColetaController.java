@@ -1,51 +1,60 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import Utils.GerarID;
 import models.ColetaDeSangue;
 import models.Doador;
 import models.Funcionario;
+import models.Pessoa;
 
 public class ColetaController {
 
 	private static	ArrayList<ColetaDeSangue> coletas = new ArrayList<ColetaDeSangue>();
-	private static	ArrayList<Doador> doadores = new ArrayList<Doador>();
+	private static	ArrayList<Pessoa> doadores = new ArrayList<Pessoa>();
 	private static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		
 	
 public static void Cadastro(String doador, String funcionario, String Tipo, int Quantidade) {
 		
 	ColetaDeSangue coleta = new ColetaDeSangue();
+	
+	doadores = PessoaController.doador;
 		
 		for(int i = 0; i < doadores.size(); i++) {
-			Doador d = doadores.get(i);
-			if(d.getNome().equals(doador)) {
-				coleta.setDoador(d);
-			}			
+			Pessoa p = doadores.get(i);
+			if(p.getNome().equals(doador)) {
+				coleta.setDoadores(p);
+			}
+			System.out.println(p);
+			
 		}
 		
-		if(coleta.getDoador() == null) {
-			System.out.println("Doador não encontrador!");
-			System.out.println("Não e possivel fazer a coleta sem um doador!");
-		}else {
-			for(int i = 0; i < funcionarios.size(); i++) {
-				Funcionario d = funcionarios.get(i);
-				if(d.getNome().equals(funcionario)) {
-					coleta.setFuncionario(d);
-				}			
-			}
-			if(coleta.getFuncionario() == null) {
-				System.out.println("Funcionario não encontrador!");
-				System.out.println("Não e possivel fazer a coleta sem um Funcionario!");
-			}else {
-				coleta.setID(GerarID.GerarColeta());
-				coleta.setQuantidade(Quantidade);
-				coleta.setTipoSanguineo(Tipo);
-				coletas.add(coleta);
-			}
-		}
+//		if(coleta.getDoadores() == null) {
+//			System.out.println("Doador não encontrador!");
+//			System.out.println("Não e possivel fazer a coleta sem um doador!");
+//		}else {
+//			for(int i = 0; i < funcionarios.size(); i++) {
+//				Funcionario d = funcionarios.get(i);
+//				if(d.getNome().equals(funcionario)) {
+//					coleta.setFuncionarios(d);;
+//				}			
+//			}
+//			if(coleta.getFuncionarios() == null) {
+//				System.out.println("Funcionario não encontrador!");
+//				System.out.println("Não e possivel fazer a coleta sem um Funcionario!");
+//			}else {
+//				if(coleta.getCriadoEm().equals(new Date())) {
+//					System.out.println("Não e possivel fazer a coleta no mesmo dia!");
+//				}
+//				coleta.setID(GerarID.GerarColeta());
+//				coleta.setQuantidade(Quantidade);
+//				coleta.setTipoSanguineo(Tipo);
+//				coletas.add(coleta);
+//			}
+//		}
 	}
 
 public static List<ColetaDeSangue> Listar() {
@@ -53,23 +62,22 @@ public static List<ColetaDeSangue> Listar() {
 	return coletas;
 }
 
-public static void Remover(String doador) {
-	
-	for (int i = 0; i < coletas.size(); i++) {
-		ColetaDeSangue c = coletas.get(i);
-
-		if (c.getDoador().getNome().equals(doador)) {
-			coletas.remove(c);
-			if (coletas.size() > 0) {
-				Listar();
-			} else {
-				System.out.println("Lista de doadores vazia!");
-			}
-		} else {
-			System.out.println("Doador não encontrado!");
-		}
-	}
-}
+//public static void Remover(String doador) {
+//	
+//	for (int i = 0; i < coletas.size(); i++) {
+//		ColetaDeSangue c = coletas.get(i);
+//		if (c.getDoadores().get(i).equals(doador)) {
+//			coletas.remove(c);
+//			if (coletas.size() > 0) {
+//				Listar();
+//			} else {
+//				System.out.println("Lista de doadores vazia!");
+//			}
+//		} else {
+//			System.out.println("Doador não encontrado!");
+//		}
+//	}
+//}
 public static void EstoqueTotal() {
 	int Amais = 0;
 	int Amenos = 0;

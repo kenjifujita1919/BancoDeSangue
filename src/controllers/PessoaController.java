@@ -12,8 +12,12 @@ public class PessoaController {
 	
 
 	private static ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
+	
+	public static ArrayList<Pessoa> doador = new ArrayList<Pessoa>();
+	
+	public static ArrayList<Pessoa> funcionario = new ArrayList<Pessoa>();
 
-	public static void cadastrar(Pessoa doador) {
+	public static void cadastrarPessoa(Pessoa doador) {
 
 		boolean clienteEncontrado = false;
 		for (Pessoa d : pessoas) {
@@ -22,7 +26,6 @@ public class PessoaController {
 			}
 		}
 		if (!clienteEncontrado) {
-			doador.setId(GerarID.GerarDoador());
 			pessoas.add(doador);
 		} else {
 			System.out.println("Esse cliente já existe!");
@@ -32,7 +35,7 @@ public class PessoaController {
 	
 	
 	
-	public static void castrar(Pessoa funcionario) {
+	public static void cadastrarFuncionario(Pessoa funcionario) {
 		
 		boolean funcionarioEncontrado = false;
 		for(Pessoa f : pessoas) {
@@ -41,7 +44,6 @@ public class PessoaController {
 			}
 		}
 			if(!funcionarioEncontrado) {
-				funcionario.setId(GerarID.GerarDoador());
 				pessoas.add(funcionario);
 			}else {
 				System.out.println("Esse funcionario já existe!");
@@ -50,32 +52,22 @@ public class PessoaController {
 		}
 	
 	
-	
-	
 	public static ArrayList<Pessoa> listarDoador() {
-
-		ArrayList<Pessoa> doador = new ArrayList<Pessoa>();
-
 		for (Pessoa pessoa : pessoas) {
 			if (pessoa instanceof Doador) {
 				doador.add(pessoa);
-
 			}
-
+			
 		}
 		return doador;
 	}
 	
 	public static ArrayList<Pessoa> listarFuncionario() {
 
-		ArrayList<Pessoa> funcionario = new ArrayList<Pessoa>();
-
 		for (Pessoa pessoa : pessoas) {
 			if (pessoa instanceof Funcionario) {
 				funcionario.add(pessoa);
-
 			}
-
 		}
 		return funcionario;
 	}

@@ -1,12 +1,13 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class ColetaDeSangue {
 
 	int ID;
-	private Doador doador;
-	private Funcionario funcionario;
+	private Pessoa doadores;
+	private Pessoa funcionarios;
 	private int Quantidade;
 	private String tipoSanguineo;
 	private Date criadoEm;
@@ -31,20 +32,20 @@ public class ColetaDeSangue {
 		ID = iD;
 	}
 
-	public Doador getDoador() {
-		return doador;
+	public Pessoa getDoadores() {
+		return doadores;
 	}
 
-	public void setDoador(Doador doador) {
-		this.doador = doador;
+	public void setDoadores(Pessoa doadores) {
+		this.doadores = doadores;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public Pessoa getFuncionarios() {
+		return funcionarios;
 	}
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setFuncionarios(Pessoa funcionarios) {
+		this.funcionarios = funcionarios;
 	}
 
 	public Date getCriadoEm() {
@@ -65,10 +66,8 @@ public class ColetaDeSangue {
 
 	@Override
 	public String toString() {
-		return "ColetaDeSangue [ID=" + ID + ", doador=" + doador + ", funcionario=" + funcionario + ", Quantidade="
-				+ Quantidade + ", tipoSanguineo=" + tipoSanguineo + ", criadoEm=" + criadoEm + "]";
+		return "ColetaDeSangue [ID=" + ID + ", doadores=" + doadores + ", funcionarios=" + funcionarios
+				+ ", Quantidade=" + Quantidade + ", tipoSanguineo=" + tipoSanguineo + ", criadoEm=" + criadoEm + "]";
 	}
-	
-	
 
 }

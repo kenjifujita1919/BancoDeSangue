@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import Utils.GerarID;
 import controllers.PessoaController;
+import models.Doador;
 import models.Funcionario;
 
 public class FuncionarioView {
@@ -10,8 +11,7 @@ public class FuncionarioView {
 	public static void Menu() {
 		int opcao;
 		Scanner sc = new Scanner(System.in);
-
-		Funcionario Funcionario;
+		Funcionario funcionario;	
 
 		String nome, email, cpf, telefone;
 
@@ -36,8 +36,8 @@ public class FuncionarioView {
 				System.out.println("Digite o Telefone do funcionário:");
 				email = sc.nextLine();
 				try {
-					Funcionario = new Funcionario(GerarID.GerarFuncionario(), nome, cpf, telefone, email);
-					PessoaController.cadastrar(Funcionario);
+					funcionario = new Funcionario(GerarID.GerarFuncionario(), nome, cpf, email, telefone);
+					PessoaController.cadastrarFuncionario(funcionario);
 				}
 				catch (Exception e) {
 					System.out.println("ERRO: " +  e.getMessage());

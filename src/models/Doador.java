@@ -5,27 +5,18 @@ import java.util.List;
 
 public class Doador extends Pessoa {
 
-	double peso;
-
-//	public Doador(int _id, String _nome, String _cpf, String _email, String _telefone) {
-//		super(_id, _nome, _cpf, _email, _telefone);
-//		
+	private double peso;
+	
+//	public Doador(String nome, String cpf,String telefone, String email, double peso) {
+//		super(nome, cpf, telefone, email);
+//		this.peso = peso;
 //	}
-	
-	
 
-	
-
-	
-	public Doador(int _id, String _nome, String _cpf, String _email, String _telefone, double peso) {
-		super(_id, _nome, _cpf, _email, _telefone);
+	public Doador(int id, String nome, String cpf, String email, String telefone, double peso) {
+		super(id, nome, cpf, email, telefone);
 		this.peso = peso;
 	}
-
-
-
-
-
+	
 
 	public double getPeso() {
 		return peso;
@@ -33,15 +24,6 @@ public class Doador extends Pessoa {
 
 	public void setPeso(double peso) {
 		this.peso = peso;
-	}
-
-
-
-
-	public List<Doador> doadores = new ArrayList<Doador>();
-
-	public List<Doador> getDoadores() {
-		return doadores;
 	}
 
 	@Override
@@ -53,9 +35,9 @@ public class Doador extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Doador [peso=" + peso + "]";
+		return "Doador [Id=" + getId() + ", Nome=" + getNome() + ", Cpf=" + getCpf()
+				+ ", Email=" + getEmail() + ", Telefone=" + getTelefone() + " peso="+peso+"]";
 	}
-
 	
-
+	
 }

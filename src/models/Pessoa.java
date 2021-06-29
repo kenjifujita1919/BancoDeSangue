@@ -8,13 +8,18 @@ public class Pessoa {
 	private String email;
 	private String telefone;
 	
-	public Pessoa(int _id, String _nome, String _cpf, String _email, String _telefone) {
-		
-		this.id = _id;
-		this.nome = _nome;
-		this.cpf = _cpf;
-		this.email = _email;
-		this.telefone = _telefone;
+	
+
+	public Pessoa() {
+		super();
+	}
+
+	public Pessoa(int id, String nome, String cpf, String email, String telefone) {
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.telefone = telefone;
 	}
 
 	public int getId() {
@@ -57,11 +62,11 @@ public class Pessoa {
 		this.telefone = telefone;
 	}
 
-	@Override
-	public String toString() {
-		return "PessoaController [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", telefone="
-				+ telefone + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "PessoaController [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", telefone="
+//				+ telefone + "]";
+//	}
 	
 	
 	

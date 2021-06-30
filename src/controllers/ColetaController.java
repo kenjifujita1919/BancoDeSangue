@@ -1,83 +1,95 @@
 package controllers;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import Utils.GerarID;
 import models.ColetaDeSangue;
 import models.Doador;
 import models.Funcionario;
-import models.Pessoa;
+
+import java.time.LocalDateTime;
 
 public class ColetaController {
 
 	private static	ArrayList<ColetaDeSangue> coletas = new ArrayList<ColetaDeSangue>();
-	private static	ArrayList<Pessoa> doadores = new ArrayList<Pessoa>();
-	private static	ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
-		
+
 	
-public static void Cadastro(String doador, String funcionario, String Tipo, int Quantidade) {
-		
+	
+public static void Cadastro(String nomeDoador, String nomeFuncionario, String Tipo, int Quantidade) {
 	ColetaDeSangue coleta = new ColetaDeSangue();
 	
-	doadores = PessoaController.doador;
-		
-		for(int i = 0; i < doadores.size(); i++) {
-			Pessoa p = doadores.get(i);
-			if(p.getNome().equals(doador)) {
-				coleta.setDoadores(p);
-			}
-			System.out.println(p);
+	LocalDateTime dataAtual = LocalDateTime.now();
+
+	
+	ArrayList<Doador> doadores = DoadorController.listarDoador();
+	ArrayList<Funcionario> funcionarios = FuncionarioController.listarFuncionario();
 			
-		}
-		
-//		if(coleta.getDoadores() == null) {
-//			System.out.println("Doador não encontrador!");
-//			System.out.println("Não e possivel fazer a coleta sem um doador!");
-//		}else {
-//			for(int i = 0; i < funcionarios.size(); i++) {
-//				Funcionario d = funcionarios.get(i);
-//				if(d.getNome().equals(funcionario)) {
-//					coleta.setFuncionarios(d);;
-//				}			
-//			}
-//			if(coleta.getFuncionarios() == null) {
-//				System.out.println("Funcionario não encontrador!");
-//				System.out.println("Não e possivel fazer a coleta sem um Funcionario!");
-//			}else {
-//				if(coleta.getCriadoEm().equals(new Date())) {
-//					System.out.println("Não e possivel fazer a coleta no mesmo dia!");
-//				}
-//				coleta.setID(GerarID.GerarColeta());
-//				coleta.setQuantidade(Quantidade);
-//				coleta.setTipoSanguineo(Tipo);
-//				coletas.add(coleta);
-//			}
-//		}
+	if (doadores.size() <= 0 || funcionarios.size() <= 0) {
+		System.out.println("Não foi possivel cadastrar coleta por que nenhum doador e/ou funcionario está cadastrado!");
+		return;
 	}
 
-public static List<ColetaDeSangue> Listar() {
+	 boolean encontrouDoador = false;
+	 boolean encontrouFuncionario = false;
+	 
+	 for(Doador doador: doadores) {
+		 if(doador.getNome().equals(nomeDoador)) {
+			 coleta.setDoador(doador);
+			 encontrouDoador = true;
+		}
+	 }
+	 
+	 
+	 for (Funcionario funcionario: funcionarios) {
+		 if(funcionario.getNome().equals(nomeFuncionario)) {
+			 coleta.setFuncionario(funcionario);
+			 encontrouFuncionario = true;
+		}
+	 }
+	 
+	 if (!encontrouDoador || !encontrouFuncionario) {
+		 System.out.println("Doador e/ou Funcionario não encontrados!");
+		 return;
+	 }
+	 
+	 for (ColetaDeSangue coletaExistente: listar()) {
+		 if (coletaExistente.getDoador().getNome().equals(nomeDoador) && !(coletaExistente.getCriadoEm().plusMonths(3).getMonth() == dataAtual.getMonth())) {
+			 System.out.println("Não e possivel fazer a coleta dentro do periodo de 3 meses!");
+			 return; 
+		 }
+	 }
+	 
+	 coleta.setID(GerarID.GerarColeta());
+	 coleta.setQuantidade(Quantidade);
+	 coleta.setTipoSanguineo(Tipo);
+	 coletas.add(coleta);
+	 
+	}
+
+public static List<ColetaDeSangue> listar() {
 
 	return coletas;
 }
 
-//public static void Remover(String doador) {
-//	
-//	for (int i = 0; i < coletas.size(); i++) {
-//		ColetaDeSangue c = coletas.get(i);
-//		if (c.getDoadores().get(i).equals(doador)) {
-//			coletas.remove(c);
-//			if (coletas.size() > 0) {
-//				Listar();
-//			} else {
-//				System.out.println("Lista de doadores vazia!");
-//			}
-//		} else {
-//			System.out.println("Doador não encontrado!");
-//		}
-//	}
-//}
+public static void remover(int idColeta) {
+	for (int i = 0; i < coletas.size(); i++) {
+		
+		ColetaDeSangue coleta = coletas.get(i);
+		
+		if (coleta.getID() == idColeta) {
+			coletas.remove(coleta);
+			if (coletas.size() > 0) {
+				listar();
+			} else {
+				System.out.println("Lista de doadores vazia!");
+			}
+		} else {
+			System.out.println("Doador não encontrado!");
+		}
+	}
+}
+
 public static void EstoqueTotal() {
 	int Amais = 0;
 	int Amenos = 0;

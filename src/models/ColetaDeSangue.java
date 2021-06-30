@@ -1,19 +1,20 @@
 package models;
 
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class ColetaDeSangue {
 
 	int ID;
-	private Pessoa doadores;
-	private Pessoa funcionarios;
+	private Pessoa doador;
+	private Pessoa funcionario;
 	private int Quantidade;
 	private String tipoSanguineo;
-	private Date criadoEm;
+	private LocalDateTime criadoEm;
 
 	public ColetaDeSangue() {
-		setCriadoEm(new Date());
+		setCriadoEm(LocalDateTime.now());
 	}
 
 	public int getQuantidade() {
@@ -32,27 +33,27 @@ public class ColetaDeSangue {
 		ID = iD;
 	}
 
-	public Pessoa getDoadores() {
-		return doadores;
+	public Pessoa getDoador() {
+		return doador;
 	}
 
-	public void setDoadores(Pessoa doadores) {
-		this.doadores = doadores;
+	public void setDoador(Doador doadores) {
+		this.doador = doadores;
 	}
 
-	public Pessoa getFuncionarios() {
-		return funcionarios;
+	public Pessoa getFuncionario() {
+		return funcionario;
 	}
 
-	public void setFuncionarios(Pessoa funcionarios) {
-		this.funcionarios = funcionarios;
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 
-	public Date getCriadoEm() {
+	public LocalDateTime getCriadoEm() {
 		return criadoEm;
 	}
 
-	public void setCriadoEm(Date criadoEm) {
+	public void setCriadoEm(LocalDateTime criadoEm) {
 		this.criadoEm = criadoEm;
 	}
 
@@ -66,7 +67,7 @@ public class ColetaDeSangue {
 
 	@Override
 	public String toString() {
-		return "ColetaDeSangue [ID=" + ID + ", doadores=" + doadores + ", funcionarios=" + funcionarios
+		return "ColetaDeSangue [ID=" + ID + ", doadores=" + doador + ", funcionarios=" + funcionario
 				+ ", Quantidade=" + Quantidade + ", tipoSanguineo=" + tipoSanguineo + ", criadoEm=" + criadoEm + "]";
 	}
 

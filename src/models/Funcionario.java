@@ -10,11 +10,6 @@ public class Funcionario extends Pessoa {
 		super(id, nome, cpf, email, telefone);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		Funcionario outroFuncionario = (Funcionario) obj;
-		return getCpf().equals(outroFuncionario.getCpf());
-	}
 
 	@Override
 	public String toString() {

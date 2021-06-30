@@ -13,7 +13,7 @@ public class ColetaView {
 	Scanner sc = new Scanner(System.in);
 	
 	String nome, funcionario, tipo;
-	int quantidadeSangue;
+	int quantidadeSangue, id;
 	
 	do {
 		System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
@@ -43,16 +43,16 @@ public class ColetaView {
 			break;
 		case 2:
 			System.out.println("\n-- LISTAR COLETAS --\n");
-			for (ColetaDeSangue coleta : ColetaController.Listar()) {
+			for (ColetaDeSangue coleta : ColetaController.listar()) {
 				System.out.println(coleta);
 			}
 			break;
 		case 3:
 			System.out.println("\n-- REMOVER COLETA --\n");
-			System.out.println("Digite o nome do Doador:");
-			nome = sc.nextLine();
+			System.out.println("Digite o Id da coleta:");
+			id = sc.nextInt();
 			try {
-				//ColetaController.Remover(nome);
+				ColetaController.remover(id);
 			}
 			catch (Exception e) {
 				System.out.println("ERRO: " +  e.getMessage());

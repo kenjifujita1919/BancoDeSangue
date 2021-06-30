@@ -2,7 +2,7 @@ package views;
 import java.util.Scanner;
 
 import Utils.GerarID;
-import controllers.PessoaController;
+import controllers.FuncionarioController;
 import models.Doador;
 import models.Funcionario;
 
@@ -21,23 +21,29 @@ public class FuncionarioView {
 			System.out.println("2 - Listar funcionários");
 			System.out.println("3 - Remover funcionário");
 			System.out.println("0 - Sair\n");
-			System.out.println("Digite a opção desejada: ");
+			System.out.print("Digite a opção desejada: ");
 			opcao = sc.nextInt();
 			sc.nextLine();
+			
 			switch (opcao) {
 			case 1:
 				System.out.println("\n-- CADASTRAR FUNCIONÁRIO --\n");
-				System.out.println("Digite o nome do funcionário:");
+				
+				System.out.print("Digite o nome do funcionário: ");
 				nome = sc.nextLine();
-				System.out.println("Digite o CPF do funcionário:");
+				
+				System.out.print("Digite o CPF do funcionário: ");
 				cpf = sc.nextLine();
-				System.out.println("Digite o Email do funcionário:");
+				
+				System.out.print("Digite o Email do funcionário: ");
 				telefone = sc.nextLine();
-				System.out.println("Digite o Telefone do funcionário:");
+				
+				System.out.print("Digite o Telefone do funcionário: ");
 				email = sc.nextLine();
+				
 				try {
 					funcionario = new Funcionario(GerarID.GerarFuncionario(), nome, cpf, email, telefone);
-					PessoaController.cadastrarFuncionario(funcionario);
+					FuncionarioController.cadastrarFuncionario(funcionario);
 				}
 				catch (Exception e) {
 					System.out.println("ERRO: " +  e.getMessage());
@@ -46,14 +52,14 @@ public class FuncionarioView {
 				break;
 			case 2:
 				System.out.println("\n-- LISTA DE FUNCIONÁRIO --\n");
-				System.out.println(PessoaController.listarFuncionario());
+				System.out.println(FuncionarioController.listarFuncionario());
 				break;
 			case 3:
 				System.out.println("\n-- REMOVER FUNCIONÁRIO --\n");
-				System.out.println("Digite o nome do funcionário que deseja remover:");
-				nome = sc.nextLine();
+				System.out.print("Digite o cpf do funcionário que deseja remover: ");
+				cpf = sc.nextLine();
 				try {
-					PessoaController.removerFuncionario(nome);
+					FuncionarioController.removerFuncionario(cpf);
 				}
 				catch (Exception e) {
 					System.out.println("ERRO: " +  e.getMessage());

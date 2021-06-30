@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 public class ColetaController {
 
-	private static	ArrayList<ColetaDeSangue> coletas = new ArrayList<ColetaDeSangue>();
+	public static	ArrayList<ColetaDeSangue> coletas = new ArrayList<ColetaDeSangue>();
 
 	
 	

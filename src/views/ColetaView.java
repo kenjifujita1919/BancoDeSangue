@@ -31,7 +31,7 @@ public class ColetaView {
 			nome = sc.nextLine();
 			System.out.println("Digite o nome do funcionario:");
 			funcionario = sc.nextLine();
-			System.out.println("Digite a quantidade de sangue doada:");
+			System.out.println("Digite de bolsas:");
 			quantidadeSangue = sc.nextInt();
 			try {
 				ColetaController.Cadastro(nome, funcionario, TipoSanguineoController.Cadastro(), quantidadeSangue);

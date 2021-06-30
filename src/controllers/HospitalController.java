@@ -2,11 +2,13 @@ package controllers;
 
 import java.util.ArrayList;
 
+import models.ColetaDeSangue;
 import models.Hospital;
 
 public class HospitalController {
 	
-	private static	ArrayList<Hospital> hospitais = new ArrayList<Hospital>();
+	public static	ArrayList<Hospital> hospitais = new ArrayList<Hospital>();
+	
 	public static void Cadastro(Hospital hospital) {
 		
 		boolean hospitalEncontrado = false;

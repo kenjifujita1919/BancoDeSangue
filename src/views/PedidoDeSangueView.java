@@ -3,6 +3,7 @@ package views;
 import java.util.Date;
 import java.util.Scanner;
 
+import Utils.GerarID;
 import controllers.PedidoDeSangueController;
 import models.PedidoDeSangue;
 
@@ -15,10 +16,8 @@ public class PedidoDeSangueView {
 
 		PedidoDeSangue PedidoDeSangue;
 		int optipo;
-		String nome_do_hospital;
-		String tipoSanguineo ="";
-		int quantidade_doada;
-		Date criadoEm;
+		String nome_do_hospital, tipoSanguineo = null;
+		int quantidade;
 
 		do {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
@@ -34,6 +33,8 @@ public class PedidoDeSangueView {
 				System.out.println("\n-- CADASTRAR PEDIDO DE SANGUE --\n");
 				System.out.println("Digite o nome de Hospital:");
 				nome_do_hospital = sc.nextLine();
+				System.out.println("Digite a quantidade de bolsas:");
+				quantidade = sc.nextInt();
 				System.out.println("Selecione o tipo de Sangue");
 				System.out.println(" 1 = Tipo Sanguineo A+ ");
 				System.out.println(" 2 = Tipo Sanguineo A- ");
@@ -44,51 +45,47 @@ public class PedidoDeSangueView {
 				System.out.println(" 7 = Tipo Sanguineo O+ ");
 				System.out.println(" 8 = Tipo Sanguineo O- ");
 				optipo = sc.nextInt();
-				if(optipo == 1)
-				{
+				switch (opcao) {
+				case 1: 
 					tipoSanguineo = "A+";
-				}
-				if(optipo == 2)
-				{
+					break;
+				case 2: 
 					tipoSanguineo = "A-";
-				}
-				if(optipo == 3)
-				{
+					break;
+				case 3: 
 					tipoSanguineo = "B+";
-				}
-				if(optipo == 4)
-				{
+					break;
+				case 4: 
 					tipoSanguineo = "B-";
-				}
-				if(optipo == 5)
-				{
+					break;
+				case 5: 
 					tipoSanguineo = "AB+";
-				}
-				if(optipo == 6)
-				{
-					tipoSanguineo = "AB-";	
-				}
-				if(optipo == 7)
-				{
+					break;
+				case 6: 
+					tipoSanguineo = "AB-";
+					break;
+				case 7: 
 					tipoSanguineo = "O+";
-				}
-				if(optipo == 8)
-				{
+					break;
+				case 8: 
 					tipoSanguineo = "O-";
+					break;				
+				
+				default:
+					System.out.println("\nOpção inválida!");
+					break;
 				}
-				System.out.println("Digite a quantidade de sangue doada:");
-				quantidade_doada = sc.nextInt();
 				
 				try {
-					PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade_doada,tipoSanguineo);
+					PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade, tipoSanguineo);
 					PedidoDeSangueController.Cadastro(PedidoDeSangue);
 				}
 				catch (Exception e) {
 					System.out.println("ERRO: " +  e.getMessage());
 				}
 				
-				
 				break;
+				
 			case 2:
 				System.out.println("\n-- LISTAR PEDIDO DE SANGUE --\n");
 				for (PedidoDeSangue pedidos : PedidoDeSangueController.Listar()) {

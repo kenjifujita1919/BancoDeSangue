@@ -11,9 +11,8 @@ public class PedidoDeSangue {
 		private String tipo_sanguineo;
 		private Date criadoEm;
 		
-		public PedidoDeSangue(String nome_do_hospital, int quantidade, String tipo_sanguineo) {
+		public PedidoDeSangue(String nome_do_hospital, String tipo_sanguineo) {
 			this.nome_do_hospital = nome_do_hospital;
-			this.quantidade = quantidade;
 			this.tipo_sanguineo = tipo_sanguineo;
 			criadoEm = new Date();
 		}
@@ -32,14 +31,6 @@ public class PedidoDeSangue {
 
 		public void setNome_do_hospital(String nome_do_hospital) {
 			this.nome_do_hospital = nome_do_hospital;
-		}
-
-		public int getQuantidade() {
-			return quantidade;
-		}
-
-		public void setQuantidade(int quantidade) {
-			this.quantidade = quantidade;
 		}
 
 		public String getTipo_sanguineo() {

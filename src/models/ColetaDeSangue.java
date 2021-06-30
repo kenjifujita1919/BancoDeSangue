@@ -9,20 +9,11 @@ public class ColetaDeSangue {
 	int ID;
 	private Pessoa doador;
 	private Pessoa funcionario;
-	private int Quantidade;
 	private String tipoSanguineo;
 	private LocalDateTime criadoEm;
 
 	public ColetaDeSangue() {
 		setCriadoEm(LocalDateTime.now());
-	}
-
-	public int getQuantidade() {
-		return Quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		Quantidade = quantidade;
 	}
 
 	public int getID() {
@@ -68,7 +59,7 @@ public class ColetaDeSangue {
 	@Override
 	public String toString() {
 		return "ColetaDeSangue [ID=" + ID + ", doadores=" + doador + ", funcionarios=" + funcionario
-				+ ", Quantidade=" + Quantidade + ", tipoSanguineo=" + tipoSanguineo + ", criadoEm=" + criadoEm + "]";
+				+ ", tipoSanguineo=" + tipoSanguineo + ", criadoEm=" + criadoEm + "]";
 	}
 
 }

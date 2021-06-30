@@ -7,7 +7,7 @@ import models.Hospital;
 
 public class HospitalController {
 	
-	public static	ArrayList<Hospital> hospitais = new ArrayList<Hospital>();
+	public static ArrayList<Hospital> hospitais = new ArrayList<Hospital>();
 	
 	public static void Cadastro(Hospital hospital) {
 		

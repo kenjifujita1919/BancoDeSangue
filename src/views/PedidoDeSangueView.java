@@ -4,7 +4,9 @@ import java.util.Date;
 import java.util.Scanner;
 
 import Utils.GerarID;
+import controllers.ColetaController;
 import controllers.PedidoDeSangueController;
+import models.ColetaDeSangue;
 import models.PedidoDeSangue;
 
 public class PedidoDeSangueView {
@@ -17,7 +19,6 @@ public class PedidoDeSangueView {
 		PedidoDeSangue PedidoDeSangue;
 		int optipo;
 		String nome_do_hospital, tipoSanguineo = null;
-		int quantidade;
 
 		do {
 			System.out.println("\n-- PROJETO DE BANCO DE SANGUE --\n");
@@ -33,8 +34,6 @@ public class PedidoDeSangueView {
 				System.out.println("\n-- CADASTRAR PEDIDO DE SANGUE --\n");
 				System.out.println("Digite o nome de Hospital:");
 				nome_do_hospital = sc.nextLine();
-				System.out.println("Digite a quantidade de bolsas:");
-				quantidade = sc.nextInt();
 				System.out.println("Selecione o tipo de Sangue");
 				System.out.println(" 1 = Tipo Sanguineo A+ ");
 				System.out.println(" 2 = Tipo Sanguineo A- ");
@@ -46,51 +45,50 @@ public class PedidoDeSangueView {
 				System.out.println(" 8 = Tipo Sanguineo O- ");
 				optipo = sc.nextInt();
 				switch (opcao) {
-				case 1: 
+				case 1:
 					tipoSanguineo = "A+";
 					break;
-				case 2: 
+				case 2:
 					tipoSanguineo = "A-";
 					break;
-				case 3: 
+				case 3:
 					tipoSanguineo = "B+";
 					break;
-				case 4: 
+				case 4:
 					tipoSanguineo = "B-";
 					break;
-				case 5: 
+				case 5:
 					tipoSanguineo = "AB+";
 					break;
-				case 6: 
+				case 6:
 					tipoSanguineo = "AB-";
 					break;
-				case 7: 
+				case 7:
 					tipoSanguineo = "O+";
 					break;
-				case 8: 
+				case 8:
 					tipoSanguineo = "O-";
-					break;				
-				
+					break;
+
 				default:
 					System.out.println("\nOpção inválida!");
 					break;
 				}
-				
+
 				try {
-					PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, quantidade, tipoSanguineo);
+					PedidoDeSangue = new PedidoDeSangue(nome_do_hospital, tipoSanguineo);
 					PedidoDeSangueController.Cadastro(PedidoDeSangue);
+				} catch (Exception e) {
+					System.out.println("ERRO: " + e.getMessage());
 				}
-				catch (Exception e) {
-					System.out.println("ERRO: " +  e.getMessage());
-				}
-				
+
 				break;
-				
+
 			case 2:
 				System.out.println("\n-- LISTAR PEDIDO DE SANGUE --\n");
-				for (PedidoDeSangue pedidos : PedidoDeSangueController.Listar()) {
-					System.out.println(pedidos);
-				}
+
+				System.out.println(PedidoDeSangueController.Listar());
+
 				break;
 			case 3:
 				System.out.println("\n-- REMOVER PEDIDO DE SANGUE --\n");
@@ -98,11 +96,10 @@ public class PedidoDeSangueView {
 				tipoSanguineo = sc.nextLine();
 				try {
 					PedidoDeSangueController.Remover(tipoSanguineo);
+				} catch (Exception e) {
+					System.out.println("ERRO: " + e.getMessage());
 				}
-				catch (Exception e) {
-					System.out.println("ERRO: " +  e.getMessage());
-				}
-				
+
 				break;
 			case 0:
 				System.out.println("\nVoltando ao menu principal");
